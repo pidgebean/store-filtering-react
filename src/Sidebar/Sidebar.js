@@ -4,7 +4,7 @@ import Category from './Category/Category'
 import Price from './Price/Price'
 import Colors from './Colors/Colors'
 
-export default function Sidebar() {
+export default function Sidebar({handleChange}) {
   return (
     <>
     <section className="sidebar">
@@ -12,9 +12,9 @@ export default function Sidebar() {
             <h1>Cart</h1>
         </div>
 
-    <Category/>
-    <Price/>
-    <Colors/>
+    <Category handleChange={handleChange}/>
+    <Price handleChange={handleChange}/>
+    <Colors handleChange={handleChange}/>
     </section>
     </>
   )
