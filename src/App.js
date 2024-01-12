@@ -19,7 +19,7 @@ function App() {
   }
 
   const filteredItems = products.filter((product) => 
-    product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1)
+    product.title.toLowerCase().includes(query.toLowerCase() )
   );
 
   // -------------------------------------------------------------------------
@@ -70,9 +70,9 @@ function App() {
   return (
     <>
       <Sidebar handleChange={handleChange}/>
-      <Nav handleChange={handleChange}/>
-      <Recommended/>
-      <Products/>
+      <Nav query={query} handleInputChange={handleInputChange}/>
+      <Recommended handleClick={handleClick}/>
+      <Products result={result}/>
       
     </>
   );
